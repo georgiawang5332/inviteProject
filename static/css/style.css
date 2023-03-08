@@ -1,0 +1,541 @@
+/****************************************** global CSS *******************************************************/
+/*@import "compass/css3";*/
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /*outline: 1px solid red;*/
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #454545;
+    font: 400 75%/1.5 "economica", sans-serif;
+    min-width: 30em;
+    margin: 0;
+}
+
+h2, h3 {
+    margin: 0 0 0.375rem 0;
+}
+
+h3 {
+    margin-top: 1.5rem;
+}
+
+.h12 {
+    font-size: 12px;
+}
+
+.h13 {
+    font-size: 13px;
+}
+
+/*input, textarea, select, button {*/
+/*    !*font-family: "Muli-Regular";*!*/
+/*    font-size: 15px;*/
+/*    resize: none;*/
+/*}*/
+
+p, h1, h2, h3, h4, h5, h6, ul {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+/******************************************* Template CSS ************************************************************/
+
+/*---- column left start -----*/
+.card {
+    border: 0.75rem solid #454545;
+    max-width: 36em;
+    margin: 1.5em auto;
+}
+
+/*------------header--------------*/
+.heading {
+    font-weight: 700;
+}
+
+.super-heading, .title {
+    display: inline-block;
+    color: #f5f5f5;
+    background: #454545;
+    text-transform: uppercase;
+}
+
+.super-heading {
+    font-size: 1.75em;
+    font-style: italic;
+    padding: 0 0.5em 0.125em 0.125em;
+    margin: 1em 0 0.125em;
+    line-height: 1.25;
+}
+
+.title {
+    margin: 0 0 0.125em;
+    padding-right: 0.125em;
+    font-size: 7.5em;
+    line-height: 1;
+}
+
+.mirrored {
+    display: inline-block;
+    /*transform: matrix(-1, 0, 0, 1, 0, 0);*/
+    /*    				旋轉、傾斜、縮放、移動 : http://www.eion.com.tw/Blogger/?Pid=1168   */
+    transform: matrix(1, 0, .4, .55, 19, -10);
+    transform-origin: 57% 100%;
+}
+
+/*------------address--------------*/
+.party-address {
+    padding: 0.125em 0;
+    font-style: normal;
+    text-align: center;
+    border-width: 0.125em 0;
+    border-style: solid;
+    border-color: #454545;
+}
+
+.party-address > p {
+    display: inline-block;
+    margin: 0 1em;
+}
+
+/*------------time--------------*/
+.party-date {
+    display: block;
+    border-bottom: 0.125em solid #454545;
+    text-align: center;
+    margin: 0 0 0.5em;
+}
+
+.party-month, .party-day {
+    display: inline-block;
+    vertical-align: baseline;
+    font-weight: 700;
+}
+
+.party-month {
+    font-size: 6em;
+    line-height: 1.25;
+    margin-left: 0.25em;
+}
+
+.party-day {
+    line-height: 1;
+    font-size: 9em;
+}
+
+.party-day sup {
+    font-size: 0.25em;
+    top: -2em;
+}
+
+/*----- column left end -------*/
+
+/*---- column right start -----*/
+form {
+    /*padding: 2.4em 0.75em 0.75em;*/
+    padding: 2.4em 4.5em 4.5em;
+}
+
+/*---- input start -----*/
+input[type=radio] {
+    margin-right: 0.25em;
+}
+
+/*.radio-bringing--yes:checked ~ .is_bringing {*/
+/*    display: block;*/
+/*}*/
+
+/*.radio-coming--yes:checked ~ .bringing {*/
+/*    display: block;*/
+/*}*/
+
+.radio-coming--givemoney:checked ~ .is_givemoney { /*is_bringing*/
+    display: block;
+}
+
+.radio-bringing--yes:checked ~ .is_bringing {
+    display: block;
+}
+
+/*.radio-coming--yes:checked ~ .bringing {*/
+/*    display: block;*/
+/*}*/
+
+.radio-personal-info--yes:checked ~ .is_personal-info {
+    display: block;
+}
+
+.radio-coming--yes:checked ~ .personal-info {
+    display: block;
+}
+
+* {
+    /*outline: 1px solid red;*/
+}
+
+.radio-givemoney--yes:checked ~ .is_givemoney {
+    display: block;
+}
+
+.radio-givemoney--yes:checked ~ .personal-info-givemoney {
+    display: block;
+}
+
+/* 禮金會委託給朋友 同事。*/
+.radio-givemoney--no:checked ~ .is_not_givemoney {
+    display: block;
+}
+
+.label-coming--yes, .label-bringing--yes, .label-givemoney--yes, .label-coming--no {
+    margin-right: 1.5em;
+}
+
+.label-coming--yes, .label-personal-info--yes {
+    margin-right: 1.5em;
+}
+
+/*---- fieldset start -----*/
+/*.bringing {*/
+/*    display: none;*/
+/*    border: none;*/
+/*    padding: 0;*/
+/*}*/
+
+.is_bringing {
+    display: none;
+    padding-left: 1.5em;
+    border: none;
+}
+
+.personal-info {
+    display: none;
+    border: none;
+    padding: 0;
+}
+
+.is_personal-info {
+    display: none;
+    padding-left: 1.5em;
+    border: none;
+}
+
+.personal-info-givemoney {
+    display: none;
+    border: none;
+    padding: 0;
+}
+
+.is_givemoney {
+    display: none;
+    padding-left: 1.5em;
+    border: none;
+}
+
+.is_not_givemoney {
+    display: none;
+    padding-left: 1.5em;
+    border: none;
+}
+
+.subtitle {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.875em;
+    color: #898989;
+    margin: 0 0 0.25em;
+}
+
+/*input[type=text] {*/
+/*    width: 100%;*/
+/*    margin: 0 0 0.5em;*/
+/*    -webkit-appearance: none;*/
+/*    border-radius: 0;*/
+/*    border: 0.0675em solid #898989;*/
+/*    padding: 0.25em 0.375em;*/
+/*    color: #454545;*/
+/*}*/
+
+input[type=text]:disabled {
+    color: #898989;
+}
+
+/* CodePen - Form Invitation design: https://codepen.io/24akelly/pen/KMgxpM?editors=0100 */
+.inputicon {
+    background-color: #777;
+    color: white;
+    padding: 5px;
+    font-size: 20px;
+    /*font-family: "Roboto";*/
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: solid 1px #777;
+    margin-bottom: 3px;
+    display: inline-block;
+}
+
+input[type=text], .radio-div {
+    display: inline-block;
+    width: 75%;
+    padding: 5px;
+    /*font-family: "Roboto";*/
+    border: solid 1px #777;
+    outline: 0;
+    font-size: 15px;
+    text-align: left;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-bottom: 3px;
+}
+
+.input-group-append {
+    height: 3.45rem !important;
+}
+
+/*---- button start -----*/
+.send-card-button {
+    display: block;
+    margin: 1.5em auto 0;
+    border: none;
+    background-color: #454545;
+    padding: 0.25em 0.5em 0.5em;
+    color: #f5f5f5;
+    font-size: 1.5em;
+}
+
+.send-card-button:hover {
+    color: tomato;
+}
+
+.send-card-button.sent {
+    pointer-events: none;
+}
+
+.thank-you {
+    text-align: center;
+    margin: 1.5em 0 0 0;
+}
+
+/*---- column right start -----*/
+
+/* 素食葷食欄位 - form starting stylings ------------------------------- */
+.form-check {
+    display: block;
+    min-height: 1.5rem;
+    padding-left: 1.5em;
+    margin-bottom: 0 !important;
+}
+
+.group {
+    position: relative;
+    /*margin-bottom:10px;*/
+}
+
+input.group-inp {
+    font-size: 16px;
+    /*padding:10px 10px 10px 5px;*/
+    display: block;
+    width: 18rem;
+    border: none;
+    border-bottom: 1px solid #757575;
+}
+
+input.group-inp:focus {
+    outline: none;
+}
+
+input.food {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+/* LABEL ======================================= */
+label.group-lab {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+input.group-inp:focus ~ label.group-lab, input.group-inp:valid ~ label.group-lab {
+    /*top:-20px;*/
+    font-size: 14px;
+    color: #b5c1f3;
+    padding-left: 14.5rem;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+    position: relative;
+    display: block; /*width:300px; */
+}
+
+.bar:before, .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #5264AE;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+/* active state */
+input.group-inp:focus ~ .bar:before, input.group-inp:focus ~ .bar:after {
+    width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+    /*position:absolute;*/
+    /*height:60%;*/
+    /*width:50px;*/
+    /*top:25%;*/
+    /*left:0;*/
+    /*pointer-events:none;*/
+    /*opacity:0.5;*/
+}
+
+/* active state */
+input.group-inp:focus ~ .highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+/*Scrollable modal start*/
+.modal-body {
+    padding: 1rem 0 0 5.8rem !important;
+}
+
+/* fieldset - 第二個 */
+
+/*禮金到人未到 css設計 start*/
+.a {
+    width: 82% !important;
+    /*outline: 2px solid red;*/
+    /*padding: 5px;*/
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+span.capitalize {
+    text-transform: capitalize;
+}
+
+.low-highlight {
+    background: linear-gradient(180deg, transparent 60%, yellow 60%);
+}
+
+/*禮金到人未到 css設計 end*/
+
+/* media ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@-moz-keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+/*-------------------------------------- media start ---------------------------------------------------*/
+@media only screen and (min-width: 48em) {
+    body {
+        font-size: 1em;
+    }
+
+    /*----------- card --------------*/
+    .card {
+        max-width: 56em;
+    }
+
+    .card:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /*-------- both column -------*/
+    .column {
+        float: left;
+    }
+
+    /*.column.left {*/
+    /*  width: 66.6666%;*/
+    /*  border-right: 0.125em solid #454545;*/
+    /*}*/
+    /*.column.right {*/
+    /*  width: 33.3334%;*/
+    /*}*/
+    /*----------- address --------------*/
+    .party-address {
+        margin: 2.4em 0 1.5em;
+    }
+
+    /*----------- time --------------*/
+    .party-date {
+        border: none;
+    }
+}
+
+/*-------------------------------------- media end ---------------------------------------------------*/
+
+

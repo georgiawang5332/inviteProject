@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+<div class="left">
+</div><!--left-->
+<div class="right">
+    <form action="mailto:24akelly@gmail.com" class="rsvp" method="POST" enctype="text/plain" name="rsvpform">
+        <p class="openingmessage">Let Kevin and Jeanie know if you can make it by July 15th.</p>
+        <br/>
+        <p>Are you and your guests attending?</p>
+        <div class="radiobuttons">
+            <input type="radio" name="Yes/No" value="yes" id="yes" onclick="showform()" checked>
+            <label for="yes">Yes</label>
+            <input type="radio" name="Yes/No" id="no" value="no" onclick="hideform()">
+            <label for="no">No</label>
+        </div>
+
+        <br/>
+
+        <div id="showhide">
+            <span class="inputicon">
+                <i class="fa fa-pencil fa-fw fa-lg"></i>
+            </span>
+            <input type="text" name="Name" placeholder="Your Name"/>
+
+            <span class="inputicon">
+                <i class="fa fa-envelope-o fa-fw fa-lg"></i>
+            </span>
+            <input type="text" name="Email" placeholder="Your Email Address"/>
+
+            <span class="inputicon">
+                <i class="fa fa-male fa-fw fa-lg"></i>
+            </span>
+            <input type="text" name="Adults" placeholder="Number of Adults Attending"/>
+
+            <span class="inputicon">
+                <i class="fa fa-child fa-fw fa-lg"></i>
+            </span>
+            <input type="text" name="Kids" placeholder="Number of Kids Attending"/>
+        </div>
+
+        <p id="sorrymessage" style="display:none">We're sorry you can't make it.</p>
+
+        <br/>
+        <input type="submit" class="button" value="RSVP">
+    </form>
+</div><!--right-->
+</body>
+
+
+</body>
+</html>
+
+{#表單欄位start#}
+<span class="inputicon">
+    <i class="fa fa-male fa-fw fa-lg"></i>
+</span>
+<input class="newInput" name="Adults" placeholder="成人參加人數"/>
+
+
+<span class="inputicon">
+    <i class="fa fa-child fa-fw fa-lg"></i>
+</span>
+<input class="newInput" name="Kids" placeholder="未成年參加人數"/>
+{#表單欄位end#}
+
+
+{#fieldset - 第二個 #}
+<fieldset class="bringing">
+    <form id="theForm">
+        <h3>您會攜伴參加嗎?</h3>
+        <input type="radio" name="bringing" id="bringingYes" value="yes"
+               class="radio-bringing--yes"
+               checked/>
+        <label for="bringingYes" class="label-bringing--yes">Yes!</label>
+        <div class="is_bringing" id="bringing">
+            <h4>太好了! 幫我輸入姓名(含自己)?</h4>
+            <p class="subtitle">不限人數，共同見證這對佳偶。</p>
+            <input type="text" name="persons" id="persons"
+                   placeholder="Chuck Norris, Samuel L. Jackson"/>
+
+            我自己設計 希望成功 start
+            <div id="showhide">
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                                            <span class="inputicon" id="basic-addon1"><i
+                                                    class="fa fa-pencil fa-fw fa-lg"></i></span>
+                        input-group-text
+                    </div>
+                    <input type="text" class="" placeholder="姓名" aria-label="Username"
+                           aria-describedby="basic-addon1">
+                    class = "form-control"
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                                                <span class="inputicon" id="basic-addon1"><i
+                                                        class="fa fa-phone fa-fw fa-lg"></i></span>
+                    </div>
+                    <input type="text" class="" placeholder="連絡電話(填一位聯繫者即可)" aria-label="Phone"
+                           aria-describedby="basic-addon1">
+                </div>
+
+                <p>希望以什麼方式收到喜帖? (擇一填寫)</p>
+                <div class="input-group mb-3">
+
+                    <div class="input-group-prepend">
+                                            <span class="inputicon" id="basic-addon1"><i
+                                                    class="fa fa-map-marker fa-fw fa-lg"></i></span>
+                    </div>
+                    <input type="text" class="" placeholder="請輸入家中地址 (偏好紙本寄送)"
+                           aria-label="address"
+                           aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                                            <span class="inputicon" id="basic-addon1"><i
+                                                    class="fa fa-envelope-o fa-fw fa-lg"></i></span>
+                    </div>
+                    <input type="text" class="" placeholder="請輸入郵件帳號 (偏好郵件寄送)"
+                           aria-label="E-mail"
+                           aria-describedby="basic-addon1">
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                                                <span class="inputicon" id="basic-addon1"><i
+                                                        class="fa fa-plus fa-fw fa-lg"></i></span>
+                    </div>
+                    <input type="text" disabled="disabled" placeholder="出席人員名單(包含自己)"
+                           aria-label="plus-column"
+                           aria-describedby="basic-addon2" style="  border-top-right-radius: 0;
+              border-bottom-right-radius: 0;">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button"><strong>+
+                            新增</strong>
+                        </button>
+                    </div>
+                </div>
+
+                <p>請問認識新人哪一位?</p>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                                            <span class="inputicon" id="basic-addon1"><i
+                                                    class="fa fa-user-o fa-fw fa-lg"></i>
+                                            </span>
+                    </div>
+                    <div class="radio-div" style="display: flex; align-items: center;       ">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                   name="inlineRadioOptions"
+                                   id="inlineRadio1" value="option1">
+                            <label class="form-check-label" for="inlineRadio1"><i
+                                    class="fa fa-male"
+                                    aria-hidden="true"></i>新郎</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                   name="inlineRadioOptions"
+                                   id="inlineRadio2" value="option2">
+                            <label class="form-check-label" for="inlineRadio2"><i
+                                    class="fa fa-female"
+                                    aria-hidden="true"></i>
+                                新娘</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                   name="inlineRadioOptions"
+                                   id="inlineRadio3" value="option3">
+                            <label class="form-check-label" for="inlineRadio3"><i
+                                    class="fa fa-users"
+                                    aria-hidden="true"></i>共同朋友</label>
+                        </div>
+                    </div>
+                </div>
+
+                <p>您選擇飲食是?</p>
+{#                1. #}
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                                            <span class="inputicon" id="basic-addon1"><i
+                                                    class="fa fa-cutlery fa-fw fa-lg"></i>
+                                            </span>
+                    </div>
+                    <div class="radio-div" style="display: flex; align-items: center;       ">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                   name="inlineRadioOptions"
+                                   id="inlineRadio1" value="option1">
+                            <label class="form-check-label" for="inlineRadio1">葷食</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                   name="inlineRadioOptions"
+                                   id="inlineRadio2" value="option2">
+                            <label class="form-check-label" for="inlineRadio2">素食</label>
+                        </div>
+                    </div>
+                </div>
+{#                2. #}
+                <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                                <span class="inputicon" id="basic-addon1"><i
+                                        class="fa fa-cutlery fa-fw fa-lg mt-5"></i>
+                                </span>
+                        </div>
+                        <div class="radio-div" style="align-items: center;">
+                            <div class="form-check form-check-inline">
+                                <div class="group">
+                                    <input type="text" class="group-inp" style="border-top-right-radius: 0!important;
+    border-bottom-right-radius: 0!important;" required>
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label class="group-lab form-check-label" for="inlineRadio1">葷食</label>
+                                </div>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <div class="group">
+                                    <input type="text" class="group-inp" style="border-top-right-radius: 0!important;
+    border-bottom-right-radius: 0!important;" required>
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label class="group-lab form-check-label" for="inlineRadio2">素食</label>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                <p>請選擇幾張嬰兒座椅?</p>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                                            <span class="inputicon" id="basic-addon1"><i
+                                                    class="fa fa-chevron-right fa-fw fa-lg"></i>
+                                            </span>
+                    </div>
+                    <div class="radio-div" style="display: flex; align-items: center;       ">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                   name="inlineRadioOptions"
+                                   id="inlineRadio0" value="option0">
+                            <label class="form-check-label" for="inlineRadio0">0</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                   name="inlineRadioOptions"
+                                   id="inlineRadio1" value="option1">
+                            <label class="form-check-label" for="inlineRadio1">1</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                   name="inlineRadioOptions"
+                                   id="inlineRadio2" value="option2">
+                            <label class="form-check-label" for="inlineRadio2">2</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                   name="inlineRadioOptions"
+                                   id="inlineRadio3" value="option3">
+                            <label class="form-check-label" for="inlineRadio3">3</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                   name="inlineRadioOptions"
+                                   id="inlineRadio4" value="option4">
+                            <label class="form-check-label" for="inlineRadio4">4</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                   name="inlineRadioOptions"
+                                   id="inlineRadio5" value="option5">
+                            <label class="form-check-label" for="inlineRadio5">5</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                   name="inlineRadioOptions"
+                                   id="inlineRadio6" value="option6">
+                            <label class="form-check-label" for="inlineRadio6">6</label>
+                        </div>
+                    </div>
+                </div>
+
+
+                ----------------------------------
+                <span class="inputicon">
+                                        <i class="fa fa-male fa-fw fa-lg"></i>
+                                    </span>
+                <input class="newInput" name="Adults" placeholder="成人參加人數"/>
+
+                <span class="inputicon">
+                                        <i class="fa fa-child fa-fw fa-lg"></i>
+                                    </span>
+                <input class="newInput" name="Kids" placeholder="孩子參加人數"/>
+            </div>
+
+            {#                                    我自己設計 希望成功 end#}
+        </div>
+
+        <input type="radio" name="bringing" value="no" id="bringingNo"
+               class="radio-bringing--no"/>
+        <label for="bringingNo" class="label-bringing--no">No, 未攜伴，隻身前來祝福這對佳偶。</label>
+    </form>
+</fieldset>
+
+
+
+
+
+
+
+
+ {#fieldset - 第二個 #}
+            {#            <fieldset class="bringing">#}
+            {#                <h4>您會攜伴參加嗎? </h4>#}
+            {#                <p>會的話幫我填出席者資訊 ...</p>#}
+            {#                <input type="radio" name="bringing" value="yes" id="bringingYes" class="radio-bringing--yes" checked/>#}
+            {#                <label for="bringingYes" class="label-bringing--yes">Yes!</label>#}
+            {#                <div class="is_bringing" id="bringing">#}
+            {#                    <p class="subtitle">歡迎共襄盛舉，共同見證這對新人之婚禮。</p>#}
+            {#                    <div class="input-group mb-3">#}
+            {#                        <div class="input-group-prepend">#}
+            {#                            <span class="inputicon" id="basic-addon1">#}
+            {#                                <i class="fa fa-plus fa-fw fa-lg"></i>#}
+            {#                            </span>#}
+            {#                        </div>#}
+            {#                        <input type="text" disabled="disabled" placeholder="新增出席人員名單"#}
+            {#                               aria-label="plus-column"#}
+            {#                               aria-describedby="basic-addon2"#}
+            {#                               style="  border-top-right-radius: 0; border-bottom-right-radius: 0;">#}
+            {#                        <div class="input-group-append">#}
+            {#                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"#}
+            {#                                    data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">+ 新增#}
+            {#                            </button>#}
+            {#                            <!-- Scrollable modal start -->#}
+            {#                            <div class="modal fade" id="exampleModal" tabindex="-1"#}
+            {#                                 aria-labelledby="exampleModalLabel"#}
+            {#                                 aria-hidden="true">#}
+            {#                                <div class="modal-dialog">#}
+            {#                                    <div class="modal-content">#}
+            {#                                        <div class="modal-header">#}
+            {#                                            <h5 class="modal-title" id="exampleModalLabel">#}
+            {#                                                賓客新增(可多人or單人)</h5>#}
+            {#                                            <button type="button" class="btn-close" data-bs-dismiss="modal"#}
+            {#                                                    aria-label="Close"></button>#}
+            {#                                        </div>#}
+            {#                                        <div class="modal-body">#}
+            {#                                            <div class="input-group mb-3">#}
+            {#                                                <div class="input-group-prepend">#}
+            {#                                                    <span class="inputicon" id="basic-addon1">#}
+            {#                                                        <i class="fa fa-pencil fa-fw fa-lg"></i>#}
+            {#                                                    </span>#}
+            {#                                                </div>#}
+            {#                                                <input type="text" class="" placeholder="姓名"#}
+            {#                                                       aria-label="Username"#}
+            {#                                                       aria-describedby="basic-addon1">#}
+            {#                                            </div>#}
+            {##}
+            {#                                            <div class="input-group mb-3">#}
+            {#                                                <div class="input-group-prepend">#}
+            {#                                                    <span class="inputicon" id="basic-addon1">#}
+            {#                                                        <i class="fa fa-pencil fa-fw fa-lg"></i>#}
+            {#                                                    </span>#}
+            {#                                                </div>#}
+            {#                                                <input type="text" name="persons" id="persons"#}
+            {#                                                       placeholder="Chuck Norris, Samuel L. Jackson"/>#}
+            {#                                            </div>#}
+            {##}
+            {#                                            <p>賓客選擇飲食是? (請用阿拉伯數字填上人數。 ex: 5)</p>#}
+            {#                                            <div class="input-group mb-3">#}
+            {#                                                <div class="input-group-prepend">#}
+            {#                                                    <span class="inputicon" id="basic-addon1">#}
+            {#                                                        <i class="fa fa-cutlery fa-fw fa-lg mt-5"></i>#}
+            {#                                                    </span>#}
+            {#                                                </div>#}
+            {#                                                <div class="radio-div" style="align-items: center;">#}
+            {#                                                    <div class="form-check form-check-inline">#}
+            {#                                                        <div class="group">#}
+            {#                                                            <input type="text" class="group-inp" style="border-top-right-radius: 0!important;#}
+            {#    border-bottom-right-radius: 0!important;" required>#}
+            {#                                                            <span class="highlight"></span>#}
+            {#                                                            <span class="bar"></span>#}
+            {#                                                            <label class="group-lab form-check-label"#}
+            {#                                                                   for="inlineRadio1">葷食</label>#}
+            {#                                                        </div>#}
+            {#                                                    </div>#}
+            {#                                                    <div class="form-check form-check-inline">#}
+            {#                                                        <div class="group">#}
+            {#                                                            <input type="text" class="group-inp" style="border-top-right-radius: 0!important;#}
+            {#    border-bottom-right-radius: 0!important;" required>#}
+            {#                                                            <span class="highlight"></span>#}
+            {#                                                            <span class="bar"></span>#}
+            {#                                                            <label class="group-lab form-check-label"#}
+            {#                                                                   for="inlineRadio2">素食</label>#}
+            {#                                                        </div>#}
+            {#                                                    </div>#}
+            {##}
+            {#                                                </div>#}
+            {#                                            </div>#}
+            {##}
+            {#                                            <p>賓客需要幾張嬰兒座椅?</p>#}
+            {#                                            <div class="input-group mb-3">#}
+            {#                                                <div class="input-group-prepend">#}
+            {#                                                        <span class="inputicon" id="basic-addon1">#}
+            {#                                                            <i class="fa fa-chevron-right fa-fw fa-lg"></i>#}
+            {#                                                        </span>#}
+            {#                                                </div>#}
+            {#                                                <div class="radio-div" style="display: flex; align-items: center;">#}
+            {#                                                    <div class="form-check form-check-inline">#}
+            {#                                                        <input class="form-check-input" type="radio"#}
+            {#                                                               name="inlineRadioOptions"#}
+            {#                                                               id="inlineRadio0" value="option0">#}
+            {#                                                        <label class="form-check-label"#}
+            {#                                                               for="inlineRadio0">0</label>#}
+            {#                                                    </div>#}
+            {#                                                    <div class="form-check form-check-inline">#}
+            {#                                                        <input class="form-check-input" type="radio"#}
+            {#                                                               name="inlineRadioOptions"#}
+            {#                                                               id="inlineRadio1" value="option1">#}
+            {#                                                        <label class="form-check-label"#}
+            {#                                                               for="inlineRadio1">1</label>#}
+            {#                                                    </div>#}
+            {#                                                    <div class="form-check form-check-inline">#}
+            {#                                                        <input class="form-check-input" type="radio"#}
+            {#                                                               name="inlineRadioOptions"#}
+            {#                                                               id="inlineRadio2" value="option2">#}
+            {#                                                        <label class="form-check-label"#}
+            {#                                                               for="inlineRadio2">2</label>#}
+            {#                                                    </div>#}
+            {#                                                    <div class="form-check form-check-inline">#}
+            {#                                                        <input class="form-check-input" type="radio"#}
+            {#                                                               name="inlineRadioOptions"#}
+            {#                                                               id="inlineRadio3" value="option3">#}
+            {#                                                        <label class="form-check-label"#}
+            {#                                                               for="inlineRadio3">3</label>#}
+            {#                                                    </div>#}
+            {#                                                    <div class="form-check form-check-inline">#}
+            {#                                                        <input class="form-check-input" type="radio"#}
+            {#                                                               name="inlineRadioOptions"#}
+            {#                                                               id="inlineRadio4" value="option4">#}
+            {#                                                        <label class="form-check-label"#}
+            {#                                                               for="inlineRadio4">4</label>#}
+            {#                                                    </div>#}
+            {#                                                    <div class="form-check form-check-inline">#}
+            {#                                                        <input class="form-check-input" type="radio"#}
+            {#                                                               name="inlineRadioOptions"#}
+            {#                                                               id="inlineRadio5" value="option5">#}
+            {#                                                        <label class="form-check-label"#}
+            {#                                                               for="inlineRadio5">5</label>#}
+            {#                                                    </div>#}
+            {#                                                    <div class="form-check form-check-inline">#}
+            {#                                                        <input class="form-check-input" type="radio"#}
+            {#                                                               name="inlineRadioOptions"#}
+            {#                                                               id="inlineRadio6" value="option6">#}
+            {#                                                        <label class="form-check-label"#}
+            {#                                                               for="inlineRadio6">6</label>#}
+            {#                                                    </div>#}
+            {#                                                </div>#}
+            {#                                            </div>#}
+            {##}
+            {#                                            <p>※ 可否讓我了解年齡區分呢?</p>#}
+            {#                                            <div class="input-group mb-3">#}
+            {#                                                <div class="input-group-prepend">#}
+            {#                                                    <span class="inputicon" id="basic-addon1">#}
+            {#                                                        <i class="fa fa-male fa-fw fa-lg"></i>#}
+            {#                                                    </span>#}
+            {#                                                </div>#}
+            {#                                                <input type="text" name="Adults"#}
+            {#                                                       placeholder="滿七歲以上 參加人數"#}
+            {#                                                       aria-label="Phone"#}
+            {#                                                       aria-describedby="basic-addon1">#}
+            {#                                            </div>#}
+            {#                                            <div class="input-group mb-3">#}
+            {#                                                <div class="input-group-prepend">#}
+            {#                                                    <span class="inputicon" id="basic-addon1">#}
+            {#                                                        <i class="fa fa-child fa-fw fa-lg"></i>#}
+            {#                                                    </span>#}
+            {#                                                </div>#}
+            {#                                                <input type="text" name="Kids" placeholder="未滿七歲以下 參加人數"#}
+            {#                                                       aria-label="Phone"#}
+            {#                                                       aria-describedby="basic-addon1">#}
+            {#                                            </div>#}
+            {#                                        </div>#}
+            {#                                        <div class="modal-footer">#}
+            {#                                            <button type="button" class="btn btn-secondary"#}
+            {#                                                    data-bs-dismiss="modal">#}
+            {#                                                取消#}
+            {#                                            </button>#}
+            {#                                            <button type="button" class="btn btn-primary">確定新增</button>#}
+            {#                                        </div>#}
+            {#                                    </div>#}
+            {#                                </div>#}
+            {#                            </div>#}
+            {#                            <!-- Scrollable modal end -->#}
+            {#                        </div>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {#                <input type="radio" name="bringing" value="no" id="bringingNo" class="radio-bringing--no"/>#}
+            {#                <label for="bringingNo" class="label-bringing--no">No, 我是獨行俠</label>#}
+            {#            </fieldset>#}
+
+
+
