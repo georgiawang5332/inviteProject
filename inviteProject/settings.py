@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-fl#5kjvjpm-hr13mx3b=u9uq1)x4%1h8glhbf&-(69vtses7fd
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -76,7 +76,8 @@ DATABASES = {
         'NAME': 'invitewedding',
         'USER': 'postgres',
         'PASSWORD': 'postgres5',
-        'HOST': 'localhost',
+        # 'HOST': 'localhost',
+        'HOST': 'inviteproject-production.up.railway.app',
         'PORT': '5432',
         'DISABLE_SERVER_SIDE_CURSORS': True,
         # 游標問題: https://stackoverflow.com/questions/19069722/psycopg2-operationalerror-cursor-does-not-exist
