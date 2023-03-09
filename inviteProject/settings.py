@@ -77,7 +77,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'postgres5',
         # 'HOST': 'localhost',
-        'HOST': '$inviteproject-production.up.railway.app',
+        'HOST': 'inviteproject-production.up.railway.app',
         'PORT': '5432',
         'DISABLE_SERVER_SIDE_CURSORS': True,
         # 游標問題: https://stackoverflow.com/questions/19069722/psycopg2-operationalerror-cursor-does-not-exist
